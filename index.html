@@ -1,15 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body onload="init()">
+    
+    <h1>TIC TAC TOE</h1>
 
+    <div class="scoreboard">
+        <span id="score-circle-display" class="score-text blue-text">0</span>
+        <span class="score-divider">-</span>
+        <span id="score-cross-display" class="score-text yellow-text">0</span>
+    </div>
 
+    <div class="player-indicator">
+        <div id="indicator-circle" class="indicator active-player">
+            <svg viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="35" stroke="#00B0EF" stroke-width="10" fill="none" />
+            </svg>
+        </div>
+        <div id="indicator-cross" class="indicator">
+            <svg viewBox="0 0 100 100">
+                <line x1="20" y1="20" x2="80" y2="80" stroke="#FDB827" stroke-width="14" stroke-linecap="round" />
+                <line x1="80" y1="20" x2="20" y2="80" stroke="#FDB827" stroke-width="14" stroke-linecap="round" />
+            </svg>
+        </div>
+    </div>
+    
+    <div id="concent"></div>
+
+    <button class="restart-btn" onclick="init()">Spiel neu starten</button>
 
     <script src="script.js"></script>
 </body>

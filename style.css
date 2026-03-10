@@ -1,0 +1,157 @@
+body {
+    background-color: #323232;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.scoreboard {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.blue-text {
+    color: #00B0EF;
+}
+
+.yellow-text {
+    color: #FDB827;
+}
+
+.player-indicator {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.indicator {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease;
+    border: 3px solid transparent;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.indicator:not(.active-player):not(.winner-highlight) {
+    opacity: 0.3;
+}
+
+.active-player {
+    opacity: 1;
+}
+
+.winner-highlight {
+    border-color: #ff3333;
+    opacity: 1;
+}
+
+.board-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    width: 120px;
+    height: 120px;
+    text-align: center;
+    vertical-align: middle;
+    border: 5px solid white;
+    cursor: pointer;
+}
+
+td:hover:empty {
+    background-color: #3a3a3a;
+}
+
+td:first-child {
+    border-left: none;
+}
+
+td:last-child {
+    border-right: none;
+}
+
+tr:first-child td {
+    border-top: none;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+.cell-symbol-svg {
+    width: 70px;
+    height: 70px;
+}
+
+#winning-line-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.winning-line {
+    display: none;
+    stroke: #a0a0a0;
+    stroke-width: 4;
+    stroke-linecap: round;
+}
+
+#draw-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(40, 40, 40, 0.95);
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    padding: 20px 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    z-index: 20;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.restart-btn {
+    margin-top: 40px;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    font-family: 'Open Sans', sans-serif;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.restart-btn:hover {
+    background-color: white;
+    color: #323232;
+}
